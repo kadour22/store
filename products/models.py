@@ -16,6 +16,7 @@ class Product(models.Model):
     updated_at  = models.DateTimeField(auto_now=True)
     image       = models.ImageField(upload_to='products/')
     category    = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    stock       =  models.IntegerField(null=True)
 
     def __str__(self):
         return self.name
